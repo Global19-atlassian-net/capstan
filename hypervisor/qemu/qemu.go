@@ -191,6 +191,7 @@ func LaunchVM(c *VMConfig, extra ...string) (*exec.Cmd, error) {
 		cmd.Stderr = os.Stderr
 	}
 	cmd.Stdin = os.Stdin
+	fmt.Printf("running command: \n%v\n", cmd.Args)
 	if err := cmd.Start(); err != nil {
 		return nil, err
 	}

@@ -216,6 +216,7 @@ func VBoxManage(args ...string) error {
 
 func VBoxHeadless(args ...string) (*exec.Cmd, error) {
 	cmd := exec.Command("VBoxHeadless", args...)
+	fmt.Printf("running command: \n%v\n", cmd.Args)
 	err := cmd.Start()
 	return cmd, err
 }

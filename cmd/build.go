@@ -191,6 +191,7 @@ func UploadFiles(r *util.Repo, hypervisor string, image string, t *core.Template
 	if err != nil {
 		return err
 	}
+	fmt.Printf("running command: \n%v\n", cmd.Args)
 	if err := cmd.Start(); err != nil {
 		return err
 	}
@@ -277,6 +278,7 @@ func SetArgs(r *util.Repo, hypervisor, image string, args string) error {
 	if err != nil {
 		return err
 	}
+	fmt.Printf("running command: \n%v\n", cmd.Args)
 	err = cmd.Start()
 	if err != nil {
 		return err
